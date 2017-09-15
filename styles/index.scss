@@ -1,0 +1,73 @@
+@import 'normalize.css';
+
+$primary: #191919;
+
+body {
+  font-size: 18px;
+  font-family: 'Roboto', sans-serif;
+  background: $primary;
+  color: white;
+  max-width: 1200px;
+  margin: 0 auto;
+  #apod {
+    max-width: 90%;
+    margin: 30px auto;
+    text-align: center;
+  }
+  #apod-resource {
+    text-align: center;
+    #apod-img {
+      max-width: 95%;
+      padding: 1.5%;
+      background: rgb(16, 16, 16);
+      border-radius: 0.3em;
+    }
+    #apod-vid-wrapper {
+      position: relative;
+      padding-bottom: 56.25%;
+      padding-top: 25px;
+      height: 0;
+      #apod-vid {
+        border: 0;
+        position: absolute;
+        top: 0;
+        left: 1%;
+        width: 98%;
+        height: 100%;
+      }
+    }
+  }
+  #apod-title {
+    margin-top: 50px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-weight: normal;
+    font-size: 2.25em;
+  }
+  #apod-desc {
+    margin: 0 auto;
+  }
+}
+
+@media screen and (min-width: 767px) {
+  #apod-title {
+    &:before, &:after {
+      content: "";
+      display: inline-block;
+      width: 10%;
+      margin: 0 .5em 0 -55%;
+      vertical-align: middle;
+      border-bottom: 1px solid;
+    }
+    &:after {
+      margin: 0 -55% 0 .5em;
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  body {
+    font-size: 16px;
+  }
+}
