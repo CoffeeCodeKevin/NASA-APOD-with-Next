@@ -7,10 +7,10 @@ body {
   font-family: 'Roboto', sans-serif;
   background: $primary;
   color: white;
-  max-width: 1200px;
+  max-width: 1000px;
   margin: 0 auto;
   #apod {
-    max-width: 90%;
+    max-width: 85%;
     margin: 30px auto;
     text-align: center;
   }
@@ -37,8 +37,13 @@ body {
       }
     }
   }
+  #apod-date {
+    margin-top: 20px;
+    font-size: 1.4em;
+  }
   #apod-title {
-    margin-top: 50px;
+    max-width: 1000px;
+    margin-top: 30px;
     text-align: center;
     text-transform: uppercase;
     letter-spacing: 0.05em;
@@ -46,11 +51,11 @@ body {
     font-size: 2.25em;
   }
   #apod-desc {
-    margin: 0 auto;
+    margin: 20px auto;
   }
 }
 
-@media screen and (min-width: 767px) {
+@media screen and (min-width: 1200px) {
   #apod-title {
     &:before, &:after {
       content: "";
