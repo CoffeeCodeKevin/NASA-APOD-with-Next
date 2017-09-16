@@ -6,8 +6,8 @@ While Next.js does have the most benefit in multi-page apps, I did this to try t
 
 To run this:
 * Clone the repo
-* Run ~~~~ npm install ~~~~
-* Run ~~~~ npm run dev ~~~~
+* Run `npm install`
+* Run `npm run dev`
 * Navigate to localhost:3000/ in your web browser.
 
-You can supply your own API key by creating a .env in the root directory and entering ~~~~ API_KEY=(YOUR_API_KEY) ~~~~
+You can supply your own API key by creating a .env in the root directory and entering `API_KEY=(YOUR_API_KEY)`
