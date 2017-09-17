@@ -28,11 +28,7 @@ export default class extends React.Component {
     return (
       // I really need to find another way to do these styles easily. Not ideal.
       // And wrapping them in a div bugs me.
-      <Layout
-          title='Astronomy Picture of the Day'
-          styleLinks= {
-            <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"/>
-          } >
+      <Layout title='Astronomy Picture of the Day'>
           <style dangerouslySetInnerHTML={{
             __html: stylesheet
           }}/>
@@ -55,7 +51,9 @@ export default class extends React.Component {
             </div>
             <div id='apod-copyright'>
               {this.props.data.copyright
-                ? 'Copyright: ' + this.props.data.copyright
+                ? <span> Copyright:
+                    <span> {this.props.data.copyright.replace('\n', ', ')} </span>
+                  </span>
                 : 'This media is public domain.'}
             </div>
             <div id='apod-button-row'>

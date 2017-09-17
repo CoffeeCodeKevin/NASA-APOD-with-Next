@@ -1,0 +1,38 @@
+$primary: #191919;
+$btn: #0000C0;
+
+body {
+  background: $primary;
+  font-family: 'Roboto', sans-serif;
+  color: white;
+}
+
+.idk {
+  position: relative;
+  top: 25px;
+  text-align: center;
+}
+
+.centered {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+a {
+  padding: 8px 13px;
+  border-radius: 8px;
+  background: $btn;
+  &:hover {
+    background: lighten($btn, 10%);
+  }
+}
+
+a, a:hover {
+  font-weight: normal;
+  text-decoration: none;
+  color: white;
+  outline: none;
+}
