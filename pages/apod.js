@@ -6,6 +6,7 @@ import { getApod } from 'api/apod/index';
 
 import stylesheet from 'styles/apod.scss';
 
+// TODO: Error handling of failed API request.
 export default class extends React.Component {
   static async getInitialProps({ query, res }) {
     const apod = await getApod(query.slug)
@@ -25,7 +26,13 @@ export default class extends React.Component {
     const yesterday = moment(this.props.data.date).subtract(1, 'days').format('YYYY-MM-DD');
 
     return (
-      <Layout title='Astronomy Picture of the Day'>
+      // I really need to find another way to do these styles easily. Not ideal.
+      // And wrapping them in a div bugs me.
+      <Layout
+          title='Astronomy Picture of the Day'
+          styleLinks= {
+            <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"/>
+          } >
           <style dangerouslySetInnerHTML={{
             __html: stylesheet
           }}/>
@@ -51,18 +58,22 @@ export default class extends React.Component {
                 ? 'Copyright: ' + this.props.data.copyright
                 : 'This media is public domain.'}
             </div>
-            <Link route='apod' params={{ slug: yesterday }}>
-              <a>
-                Yesterday
-              </a>
-            </Link>
-            {isTomorrow
-              ? <Link route='apod' params={{ slug: tomorrow }}>
-                  <a>
-                    Tomorrow
-                  </a>
-                </Link>
-              : null}
+            <div id='apod-button-row'>
+              <Link route='apod' params={{ slug: yesterday }}>
+                <a className='apod-button'>
+                  <i className='icon-left-open' />
+                  Yesterday
+                </a>
+              </Link>
+              {isTomorrow
+                ? <Link route='apod' params={{ slug: tomorrow }}>
+                    <a className='apod-button'>
+                      Tomorrow
+                      <i className='icon-right-open' />
+                    </a>
+                  </Link>
+                : null}
+            </div>
           </div>
       </Layout>
     )
