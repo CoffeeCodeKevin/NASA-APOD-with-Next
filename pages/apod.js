@@ -57,14 +57,14 @@ export default class extends React.Component {
                 : 'This media is public domain.'}
             </div>
             <div id='apod-button-row'>
-              <Link route='apod' params={{ slug: yesterday }}>
+              <Link prefetch route='apod' params={{ slug: yesterday }}>
                 <a className='apod-button'>
                   <i className='icon-left-open' />
                   Yesterday
                 </a>
               </Link>
               {isTomorrow
-                ? <Link route='apod' params={{ slug: tomorrow }}>
+                ? <Link prefetch route='apod' params={{ slug: tomorrow }}>
                     <a className='apod-button'>
                       Tomorrow
                       <i className='icon-right-open' />

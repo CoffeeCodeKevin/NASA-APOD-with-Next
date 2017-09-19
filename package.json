@@ -11,6 +11,7 @@
   "dependencies": {
     "autoprefixer": "6.7.6",
     "axios": "^0.16.2",
+    "axios-cache-plugin": "0.0.7",
     "babel-plugin-module-resolver": "2.5.0",
     "babel-plugin-wrap-in-js": "^1.1.0",
     "dotenv": "^4.0.0",
